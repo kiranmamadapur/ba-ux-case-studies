@@ -1,17 +1,18 @@
-<!DOCTYPE html><html lang="en"><head><meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1"><title>TalentBridge prototype</title><link rel="stylesheet" href="../../shared/style.css"></head><body><header><h1>TalentBridge</h1><small>Concept prototype · fictional data · runs in your browser</small></header><main id="m" aria-live="polite"></main><script src="../../shared/app.js"></script><script>
-const ST=["Applied","Screening","Interview","Offer"],RL=["Business Analyst","UX Designer"],IV=["Anita","Vikram"],now=Date.now();
-let C=S("tb-c",[["Priya S.",0,0],["Rohan M.",0,1],["Neha K.",0,2],["Imran A.",1,0],["Sara D.",1,1],["Dev P.",1,3]].map((c,i)=>({id:i+1,n:c[0],r:c[1],s:c[2],note:"",res:"",log:[{s:c[2],t:now}]}))),SC=S("tb-sc",[]),v="board",qd="",qi="",sel=null,err="",msg="";
-const save=()=>V("tb-c",C),mv=(id,s)=>{const c=C.find(x=>x.id==id);if(c&&s>=0&&s<ST.length&&c.s!=s){c.s=s;c.log.push({s,t:Date.now()});save()}};
-const A={v:x=>{v=x;err=msg="";R()},open:id=>{sel=+id;qd="";v="prof";err=msg="";R()},nx:id=>{mv(id,C.find(x=>x.id==id).s+1);R()},pv:id=>{mv(id,C.find(x=>x.id==id).s-1);R()},
-saveP:()=>{const c=C.find(x=>x.id==sel);c.note=$("#nt").value;c.res=$("#rs").value;save();msg="Profile saved.";R()},
-sch:()=>{const w=$("#dt").value,i=$("#iv").value;qd=w;qi=i;err=msg="";if(!w)err="Pick a date and time.";else if(SC.some(x=>x.w==w&&x.i==i))err=i+" already has an interview at that time.";else{SC.push({c:sel,w,i});V("tb-sc",SC);msg="Interview scheduled."}R()}};
-document.addEventListener("dragstart",e=>{const c=e.target.closest("[data-id]");if(c)e.dataTransfer.setData("text",c.dataset.id)});
-document.addEventListener("dragover",e=>{if(e.target.closest(".col"))e.preventDefault()});
-document.addEventListener("drop",e=>{const col=e.target.closest(".col");if(col){e.preventDefault();mv(e.dataTransfer.getData("text"),+col.dataset.st);R()}});
-function R(){let h=`<div class="tabs">${[["board","Pipeline board"],["rep","Weekly report"]].map(x=>`<button class="${v==x[0]?"on":""}" data-a="v" data-v="${x[0]}">${x[1]}</button>`).join("")}</div>`;
-if(v=="board")h+=`<p class="m">Drag a card to a new stage, or use the arrow buttons.</p><div class="cols">${ST.map((s,i)=>`<div class="col" data-st="${i}" aria-label="${s}"><h3>${s} (${C.filter(c=>c.s==i).length})</h3>${C.filter(c=>c.s==i).map(c=>`<div class="card" draggable="true" data-id="${c.id}"><b>${esc(c.n)}</b><div class="m">${RL[c.r]}</div><div class="row"><button data-a="pv" data-v="${c.id}" ${i==0?"disabled":""} aria-label="Move ${esc(c.n)} back">◀</button><button data-a="open" data-v="${c.id}">Open</button><button data-a="nx" data-v="${c.id}" ${i==3?"disabled":""} aria-label="Move ${esc(c.n)} forward">▶</button></div></div>`).join("")}</div>`).join("")}</div>`;
-if(v=="prof"){const c=C.find(x=>x.id==sel);h+=`<div class="c"><h2>${esc(c.n)}</h2><p class="m">${RL[c.r]} · stage: ${ST[c.s]}</p><label>Resume file<input id="rs" value="${esc(c.res)}" placeholder="name-resume.pdf"></label><label>Notes<textarea id="nt" rows="3">${esc(c.note)}</textarea></label><button data-a="saveP">Save profile</button><h3 style="margin-top:14px">Schedule interview</h3><label>Date and time<input id="dt" type="datetime-local" value="${qd}"></label><label>Interviewer<select id="iv">${IV.map(i=>`<option ${i==qi?"selected":""}>${i}</option>`).join("")}</select></label><p class="err" role="alert">${err}</p><p class="ok">${msg}</p><button class="p" data-a="sch">Schedule</button>${SC.filter(x=>x.c==sel).map(x=>`<p class="m">${x.w.replace("T"," ")} with ${x.i}</p>`).join("")}<p><button data-a="v" data-v="board">Back to board</button></p></div>`}
-if(v=="rep"){const wk=Date.now()-6048e5,moves=C.reduce((n,c)=>n+c.log.filter((l,i)=>i>0&&l.t>wk).length,0);h+=`<div class="c"><h2>Weekly pipeline report</h2><div class="tw"><table><tr><th>Role</th>${ST.map(s=>`<th>${s}</th>`).join("")}<th>Total</th></tr>${RL.map((r,i)=>`<tr><td>${r}</td>${ST.map((s,j)=>`<td>${C.filter(c=>c.r==i&&c.s==j).length}</td>`).join("")}<td>${C.filter(c=>c.r==i).length}</td></tr>`).join("")}</table></div><p>Stage moves in the last 7 days: <b>${moves}</b></p></div>`}
-$("#m").innerHTML=h}
-on(A);R();
-</script></body></html>
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width,initial-scale=1">
+<title>TalentBridge prototype</title>
+<link rel="stylesheet" href="../../shared/style.css">
+<link rel="stylesheet" href="extra.css">
+</head>
+<body>
+<header><h1>TalentBridge</h1><small>Concept project · fictional data · runs in your browser</small></header>
+<main id="app" tabindex="-1"><noscript>This prototype needs JavaScript.</noscript></main>
+<div id="live" class="sr" role="status" aria-live="polite"></div>
+<script src="../../shared/app.js"></script>
+<script src="logic.js"></script>
+<script src="app.js"></script>
+</body>
+</html>

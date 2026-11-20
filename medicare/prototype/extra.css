@@ -1,0 +1,26 @@
+/* MediCare Plus extras. The shared stylesheet is not modified; the header gradient is darkened here for AA contrast. */
+header{background:linear-gradient(135deg,#3a3ad6,#5b2fb8)}
+header small{opacity:1}
+.sr{position:absolute;width:1px;height:1px;overflow:hidden;clip:rect(0 0 0 0);white-space:nowrap}
+main:focus{outline:none}
+.banner{margin:0 0 12px;padding:8px 12px;border-radius:8px;font-weight:600}
+.banner.ok{background:#e6f6ec}
+.banner.err{background:#fdecec}
+.slots{display:grid;grid-template-columns:repeat(auto-fill,minmax(88px,1fr));gap:8px;margin:8px 0 12px}
+.slots button{display:flex;flex-direction:column;align-items:center;justify-content:center;line-height:1.2}
+.slots button small{font-size:12px;color:inherit}
+.kpis{display:grid;grid-template-columns:repeat(auto-fit,minmax(130px,1fr));gap:10px;margin-bottom:8px}
+.kpis div{background:#eef0fb;border-radius:10px;padding:10px}
+.kpis b{display:block;font-size:22px}
+.kpis span{font-size:13px;color:#445}
+.appt{display:flex;justify-content:space-between;gap:10px;flex-wrap:wrap;align-items:center;border-top:1px solid var(--l);padding:10px 0}
+.appt:first-of-type{border-top:0}
+.st{font-size:13px;font-weight:600;border-radius:99px;padding:1px 9px;background:#e8eaf6;color:#24307a}
+.st-done{background:#e6f6ec;color:#14633a}
+.st-no_show,.st-cancelled{background:#fdecec;color:#8f1d22}
+.st-checked_in,.st-in_consult{background:#fff1d6;color:#6b4300}
+.cal th,.cal td{font-size:14px;vertical-align:top}
+.cal th[scope=row]{white-space:nowrap}
+.tag{color:#3b1f9c}
+label{display:block;font-weight:600}
+@media (max-width:420px){.kpis b{font-size:19px}}

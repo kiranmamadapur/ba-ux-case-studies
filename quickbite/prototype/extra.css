@@ -1,0 +1,23 @@
+/* QuickBite additions to the shared stylesheet. Colours keep at least 4.5:1 contrast on white. */
+.sr{position:absolute;width:1px;height:1px;overflow:hidden;clip:rect(0 0 0 0);white-space:nowrap}
+.between{justify-content:space-between}
+.bar{position:sticky;top:0;z-index:2}
+.inl{display:inline-flex;align-items:center;gap:6px;min-height:44px}
+.inl input{width:22px;height:22px;margin:0}
+.item{border-bottom:1px solid var(--l);padding:10px 0}.item:last-child{border-bottom:0}
+.qty{display:inline-block;min-width:36px;text-align:center;font-weight:700}
+.eta{font-size:20px;margin:4px 0 12px}
+.steps{list-style:none;padding:0;margin:0 0 12px;display:flex;flex-wrap:wrap;gap:6px}
+.steps li{padding:4px 10px;border-radius:99px;background:#eef0fb;color:#3b4160;font-size:14px}
+.steps li.done{background:#d9f2e3;color:#14633a}.steps li.now{background:var(--ink);color:#fff;font-weight:700}
+.map{width:100%;max-width:420px;height:auto;display:block;margin:0 auto 8px}
+.map text{fill:#14172b;font-family:system-ui,sans-serif}
+.tablet .big,.big{font-size:22px}.tablet ul.big{padding-left:22px;line-height:1.5}
+.ticket{border:2px solid var(--ink);border-radius:12px;padding:12px;margin-bottom:12px;background:#fff}
+.ticket.flash{animation:qbflash .6s ease-in-out 6}
+@keyframes qbflash{0%,100%{background:#fff}50%{background:#ffe08a}}
+.note2{color:#8a3b00;font-weight:700}
+.alertbar{background:#8a1f1f;color:#fff;border-radius:10px;padding:12px 16px;font-size:20px;font-weight:700;margin-bottom:14px}
+.kpi .big{font-size:28px;font-weight:700}
+@media (prefers-reduced-motion:reduce){.ticket.flash{animation:none;background:#ffe08a}}
+@media (max-width:420px){main{padding:10px}.tabs button{flex:1 1 45%}}

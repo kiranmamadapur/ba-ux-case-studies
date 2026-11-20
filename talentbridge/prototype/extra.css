@@ -1,0 +1,21 @@
+.sr{position:absolute;width:1px;height:1px;overflow:hidden;clip:rect(0 0 0 0);white-space:nowrap}
+.inl{display:inline-flex;align-items:center;gap:8px;font-weight:600}
+.inl select{width:auto;margin:0;min-height:44px}
+label{display:block;font-weight:600}
+label.inl{display:inline-flex}
+.tbbar{display:flex;flex-wrap:wrap;gap:8px;align-items:center;margin-bottom:12px}
+.tbhint{margin:0 0 12px}
+.board{display:grid;grid-template-columns:repeat(5,minmax(220px,1fr));gap:10px;overflow-x:auto;padding-bottom:8px}
+.tbcol{min-width:0}
+.tbcol h3{display:flex;justify-content:space-between;align-items:center}
+.tbl{max-height:68vh;overflow-y:auto}
+.tbc{cursor:grab}
+.tbc.sel{outline:3px solid var(--a)}
+.tbc .row button{min-width:44px;padding:8px 10px}
+.fe{display:block;font-size:14px;margin:-6px 0 8px}
+.hist{margin:0;padding-left:20px}
+.hist li{margin-bottom:4px}
+.tbgrid{display:grid;grid-template-columns:repeat(auto-fit,minmax(260px,1fr));gap:14px}
+td.n,th.n{text-align:right}
+tr.tot td{font-weight:700}
+@media (max-width:480px){main{padding:10px}.board{grid-template-columns:repeat(5,82vw)}}

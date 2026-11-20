@@ -1,18 +1,19 @@
-<!DOCTYPE html><html lang="en"><head><meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1"><title>QuickBite prototype</title><link rel="stylesheet" href="../../shared/style.css"></head><body><header><h1>QuickBite</h1><small>Concept prototype · fictional data · runs in your browser</small></header><main id="m" aria-live="polite"></main><script src="../../shared/app.js"></script><script>
-const M=[["Paneer wrap",180],["Veg biryani",220],["Cold coffee",120],["Brownie",90]],RD=[{n:"Arun",d:.8,free:1},{n:"Bhavna",d:1.5,free:1},{n:"Chetan",d:2.4,free:1}];
-let O=S("qb-o",[]),RR=S("qb-r",RD),v="order",msg="",err="";
-const sv=()=>{V("qb-o",O);V("qb-r",RR)},trav=o=>Math.round(RR.find(r=>r.n==o.rider).d*4),eta=o=>o.st=="Accepted"?o.prep+trav(o)+2:o.st=="Picked up"?trav(o)+2:o.st=="On the way"?Math.round(trav(o)/2):0;
-const NX={"Accepted":"Picked up","Picked up":"On the way","On the way":"Delivered"};
-const A={v:x=>{v=x;msg=err="";R()},
-place:()=>{const it=M.map((m,i)=>({n:m[0],q:+$("#q"+i).value||0,p:m[1]})).filter(x=>x.q>0);err=msg="";if(!it.length)err="Add at least one item.";else{O.push({id:"QB-"+(100+O.length),it,note:$("#nt").value.trim(),st:"Placed"});sv();msg="Order placed. The restaurant will confirm shortly."}R()},
-acc:id=>{const o=O.find(x=>x.id==id),r=RR.filter(x=>x.free).sort((a,b)=>a.d-b.d)[0];err=msg="";if(!r){err="No rider is free right now. Try again in a moment.";R();return}o.prep=+$("#p"+id).value;o.rider=r.n;o.st="Accepted";r.free=0;sv();msg=`Accepted. Nearest free rider: ${r.n} (${r.d} km).`;R()},
-rej:id=>{const o=O.find(x=>x.id==id);o.st="Cancelled";sv();msg="Order cancelled. The customer is notified and refunded (simulated).";R()},
-step:id=>{const o=O.find(x=>x.id==id);o.st=NX[o.st];if(o.st=="Delivered"){o.otd=o.prep+trav(o)+2;RR.find(r=>r.n==o.rider).free=1}sv();R()}};
-function R(){let h=`<div class="tabs">${[["order","Order"],["rest","Restaurant queue"],["track","Track"],["kpi","KPI dashboard"]].map(x=>`<button class="${v==x[0]?"on":""}" data-a="v" data-v="${x[0]}">${x[1]}</button>`).join("")}</div>`;
-if(v=="order")h+=`<div class="c"><h2>Menu</h2>${M.map((m,i)=>`<div class="row" style="margin-bottom:6px"><span style="flex:1">${m[0]} · ${inr(m[1])}</span><input id="q${i}" type="number" min="0" value="0" aria-label="Quantity ${m[0]}" style="width:80px;margin:0"></div>`).join("")}<label>Item notes<input id="nt" placeholder="e.g. less spicy"></label><p class="err" role="alert">${err}</p><p class="ok">${msg}</p><button class="p" data-a="place">Place order</button></div>`;
-if(v=="rest"){const L=O.filter(o=>o.st=="Placed");h+=`<div class="c"><h2>New orders</h2><p class="err" role="alert">${err}</p><p class="ok">${msg}</p>${L.map(o=>`<div class="card"><b>${o.id}</b>: ${o.it.map(i=>i.q+" x "+i.n).join(", ")}${o.note?`<div class="m">Note: ${esc(o.note)}</div>`:""}<div class="row"><select id="p${o.id}" style="width:auto;margin:0" aria-label="Prep time">${[10,15,20,30].map(x=>`<option value="${x}">${x} min prep</option>`).join("")}</select><button class="p" data-a="acc" data-v="${o.id}">Accept</button><button data-a="rej" data-v="${o.id}">Reject</button></div></div>`).join("")||"<p>No new orders.</p>"}</div>`}
-if(v=="track")h+=`<div class="c"><h2>Orders</h2>${O.map(o=>`<div class="card"><b>${o.id}</b> <span class="tag">${o.st}</span>${o.rider?`<div class="m">Rider ${o.rider}</div>`:""}${["Accepted","Picked up","On the way"].includes(o.st)?`<div>Arrives in about <b>${eta(o)} min</b> <span class="m">(prep + travel + handoff)</span></div><button data-a="step" data-v="${o.id}">Simulate: ${NX[o.st]}</button>`:""}${o.st=="Delivered"?`<div class="ok">Delivered. Order to door: ${o.otd} min (simulated).</div>`:""}</div>`).join("")||"<p>No orders yet.</p>"}</div>`;
-if(v=="kpi"){const D=O.filter(o=>o.st=="Delivered"),C=O.filter(o=>o.st=="Cancelled");h+=`<div class="c"><h2>KPI dashboard</h2><div class="tw"><table><tr><th>KPI</th><th>Value</th></tr><tr><td>Orders placed</td><td>${O.length}</td></tr><tr><td>Delivered</td><td>${D.length}</td></tr><tr><td>Cancelled</td><td>${C.length}${O.length?" ("+Math.round(C.length/O.length*100)+"%)":""}</td></tr><tr><td>Average order to door (simulated minutes)</td><td>${D.length?Math.round(D.reduce((s,o)=>s+o.otd,0)/D.length):"-"}</td></tr></table></div><p class="m">Order accuracy needs customer confirmation and is not simulated.</p></div>`}
-$("#m").innerHTML=h}
-on(A);R();
-</script></body></html>
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width,initial-scale=1">
+<title>QuickBite prototype</title>
+<link rel="stylesheet" href="../../shared/style.css">
+<link rel="stylesheet" href="extra.css">
+</head>
+<body>
+<header><h1>QuickBite</h1><small>Concept prototype · fictional data · runs in your browser · open it in two tabs to be the customer and the restaurant</small></header>
+<main id="m"><p>Loading…</p></main>
+<div id="live" class="sr" aria-live="polite"></div>
+<noscript><p style="padding:16px">This prototype needs JavaScript.</p></noscript>
+<script src="../../shared/app.js"></script>
+<script src="logic.js"></script>
+<script src="app.js"></script>
+</body>
+</html>

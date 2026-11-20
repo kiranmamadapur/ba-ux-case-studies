@@ -1,18 +1,18 @@
-<!DOCTYPE html><html lang="en"><head><meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1"><title>MediCare Plus prototype</title><link rel="stylesheet" href="../../shared/style.css"></head><body><header><h1>MediCare Plus</h1><small>Concept prototype · fictional data · runs in your browser</small></header><main id="m" aria-live="polite"></main><script src="../../shared/app.js"></script><script>
-const D=["Dr. Rao","Dr. Iyer","Dr. Khan"],T=["09:00","10:00","11:00","12:00","14:00","15:00","16:00"];
-let fn="",fp="",B=S("mc-b",{}),C=S("mc-c",{}),X=S("mc-x",0),v="book",doc=D[0],sel="",msg="",err="",wait="";
-const mine=d=>Object.keys(B).filter(k=>k.startsWith(d+"|")).sort((a,b)=>T.indexOf(a.split("|")[1])-T.indexOf(b.split("|")[1]));
-const A={v:x=>{v=x;msg=err=wait="";R()},doc:x=>{doc=x;sel="";R()},slot:s=>{sel=s;R()},
-book:()=>{const n=$("#pn").value.trim(),ph=$("#ph").value.trim(),k=doc+"|"+sel;fn=n;fp=ph;err="";if(!sel)err="Choose a slot.";else if(!n||!/^\d{10}$/.test(ph))err="Enter a name and a 10-digit phone number.";else if(B[k]){err="That slot was just taken. Choose another.";X++;V("mc-x",X);sel=""}
-if(!err){B[k]={n,ph};V("mc-b",B);msg=`Booked: ${doc}, ${new Date(Date.now()+864e5).toDateString()} at ${sel}. Reminder scheduled for 24 hours before (simulated, nothing is sent).`;sel="";fn=fp=""}R()},
-chk:k=>{C[k]=Date.now();V("mc-c",C);const d=k.split("|")[0],ahead=Object.keys(C).filter(x=>x!=k&&x.startsWith(d+"|")&&C[x]<C[k]).length;wait=`${B[k].n} checked in. Expected wait: ${ahead*10+5} minutes (${ahead} patient(s) ahead).`;R()}};
-const chip=(l,a,val,on,dis)=>`<button class="${on?"on":""}" data-a="${a}" data-v="${val}" ${dis?"disabled":""} aria-pressed="${!!on}">${l}</button>`;
-function R(){let h=`<div class="tabs">${[["book","Book a slot"],["day","Doctor day view"],["in","Check-in"],["adm","Admin report"]].map(x=>chip(x[1],"v",x[0],v==x[0])).join("")}</div>`;
-if(v=="book"||v=="day")h+=`<div class="row">${D.map(d=>chip(d,"doc",d,doc==d)).join("")}</div>`;
-if(v=="book"){h+=`<div class="c" style="margin-top:12px"><h2>${doc}: tomorrow</h2><div class="row">${T.map(t=>chip(B[doc+"|"+t]?t+" (booked)":t,"slot",t,sel==t,!!B[doc+"|"+t])).join("")}</div><label>Name<input id="pn" value="${esc(fn)}"></label><label>Phone (10 digits)<input id="ph" inputmode="numeric" value="${esc(fp)}"></label><p class="err" role="alert">${err}</p><p class="ok">${msg}</p><button class="p" data-a="book">Book slot</button></div>`}
-if(v=="day")h+=`<div class="c" style="margin-top:12px"><h2>${doc}: day list</h2>${mine(doc).length?`<div class="tw"><table><tr><th>Time</th><th>Patient</th><th>Phone</th></tr>${mine(doc).map(k=>`<tr><td>${k.split("|")[1]}</td><td>${esc(B[k].n)}</td><td>${esc(B[k].ph)}</td></tr>`).join("")}</table></div>`:"<p>No bookings yet.</p>"}</div>`;
-if(v=="in"){const all=Object.keys(B);h+=`<div class="c"><h2>Check in a patient</h2>${all.length?all.map(k=>`<div class="row" style="margin-bottom:8px"><span>${esc(B[k].n)}, ${k.replace("|"," at ")}</span><button data-a="chk" data-v="${k}" ${C[k]?"disabled":""}>${C[k]?"Checked in":"Check in"}</button></div>`).join(""):"<p>No bookings yet.</p>"}<p class="ok">${wait}</p></div>`}
-if(v=="adm")h+=`<div class="c"><h2>Admin report</h2><div class="tw"><table><tr><th>Doctor</th><th>Booked</th><th>Open</th><th>Checked in</th></tr>${D.map(d=>`<tr><td>${d}</td><td>${mine(d).length}</td><td>${T.length-mine(d).length}</td><td>${mine(d).filter(k=>C[k]).length}</td></tr>`).join("")}</table></div><p>Double-booking attempts blocked: <b>${X}</b></p></div>`;
-$("#m").innerHTML=h}
-on(A);R();
-</script></body></html>
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width,initial-scale=1">
+<title>MediCare Plus prototype</title>
+<link rel="stylesheet" href="../../shared/style.css">
+<link rel="stylesheet" href="extra.css">
+</head>
+<body>
+<header><div><h1>MediCare Plus</h1><small>Concept project · fictional data · runs in your browser</small></div></header>
+<div id="live" class="sr" role="status" aria-live="polite"></div>
+<main id="m" tabindex="-1"><noscript>This prototype needs JavaScript.</noscript></main>
+<script src="../../shared/app.js"></script>
+<script src="logic.js"></script>
+<script src="app.js"></script>
+</body>
+</html>
