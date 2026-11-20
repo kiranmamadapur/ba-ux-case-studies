@@ -1,0 +1,3 @@
+const $=s=>document.querySelector(s),S=(k,d)=>{try{const v=localStorage.getItem(k);return v?JSON.parse(v):d}catch(e){return d}},V=(k,v)=>{try{localStorage.setItem(k,JSON.stringify(v))}catch(e){}},esc=s=>String(s).replace(/[&<>"]/g,c=>({"&":"&amp;","<":"&lt;",">":"&gt;",'"':"&quot;"}[c])),inr=n=>"₹"+Number(n).toLocaleString("en-IN");
+function on(A){document.addEventListener("click",e=>{const t=e.target.closest("[data-a]");if(t&&A[t.dataset.a])A[t.dataset.a](t.dataset.v,t)})}
+(()=>{const h=document.querySelector("header");if(h){const b=document.createElement("button");b.textContent="Reset demo data";b.onclick=()=>{try{localStorage.clear()}catch(e){}location.reload()};h.appendChild(b)}})();

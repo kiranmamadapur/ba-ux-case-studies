@@ -1,95 +1,26 @@
+# BA and UI/UX case studies
 
-# Hi, I'm Kiran Mamadapur 👋
+Case studies by **Kiran Mamadapur**, Business Analyst and UI/UX Designer. Each folder holds the requirements documents, process flows, wireframes, backlog, traceability matrix and UAT scenarios for one concept project. My real product, THE OFF GRID, has its own repository.
 
-### Business Analyst | Data Analytics | UI/UX | Digital Product Development
+Portfolio: https://kiraninbusiness.github.io/portfolio/
 
-MBA graduate in IT & Marketing with an interest in business analysis, data-driven decision-making, digital products and user-centered design.
+| Case study | Type | Domain | Tools |
+|---|---|---|---|
+| [UrbanThread](urbanthread/) | Concept project | Fashion e-commerce | Figma, Jira, Excel |
+| [MediCare Plus](medicare/) | Concept project | Healthcare appointment management | Figma, BPMN, Power BI |
+| [NovaBank](novabank/) | Concept project | Mobile banking | Figma, SQL, Excel |
+| [TalentBridge](talentbridge/) | Concept project | Recruitment management | Figma, Jira, Power BI |
+| [QuickBite](quickbite/) | Concept project | Food delivery service design | Figma, BPMN, Power BI |
 
-I enjoy understanding business problems, analysing data, documenting requirements and designing practical digital solutions.
+## Please read
 
----
+- All five are **concept projects** with fictional clients and simulated data. KPI baselines and targets are assumptions, and no UAT has been run.
+- Wireframes and high-fidelity screens are schematic drawings, not final screenshots.
 
-## 🎯 Areas of Interest
+## Try the prototypes
 
-- Business Analysis & Requirements Engineering
-- Business Process Modelling (BPMN)
-- Data Analytics & Business Intelligence
-- SQL & Database Analysis
-- Power BI & Data Visualization
-- UI/UX Design & User Research
-- Agile & Scrum
-- Digital Product Development
+Each project has a working prototype in `<project>/prototype/`. To run them online, open the repo Settings, then Pages, choose the `main` branch and the root folder, and save. To run locally, open any `prototype/index.html` in a browser.
 
----
+## What each folder contains
 
-## 🛠️ Skills & Tools
-
-| Category | Skills |
-|---|---|
-| Business Analysis | BRD, FRD, User Stories, Acceptance Criteria, RTM, Gap Analysis |
-| Process Modelling | BPMN, As-Is / To-Be, Process Mapping |
-| Data Analytics | SQL, Excel, Power BI, Tableau |
-| UI/UX | Figma, Wireframing, User Flows, Prototyping |
-| Project Management | Agile, Scrum, Jira, Confluence |
-| Documentation | Requirements Documentation, UAT Scenarios, Functional Specifications |
-
----
-
-## 📂 Featured Projects
-
-### 🏥 HealthFirst Care
-Healthcare process optimization and business analysis case study.
-
-- Requirements analysis
-- Process modelling
-- Business documentation
-- KPI analysis
-- Dashboard development
-
-### 🏪 Girias CRM Analysis
-Customer relationship management effectiveness analysis.
-
-- Customer survey analysis
-- Business research
-- CRM performance evaluation
-- Data-driven recommendations
-
-### 📊 SQL Business Analytics
-Business datasets analysed using SQL to uncover insights, trends and performance indicators.
-
-### 📈 Power BI Analytics
-Interactive dashboards focused on business metrics, data visualization and decision-making.
-
-### 🎨 UI/UX Case Studies
-User journeys, wireframes, interface design and digital product experiences.
-
----
-
-## 🎓 Education
-
-- **MBA – IT & Marketing**
-- **Bachelor of Business Administration (BBA)**
-
----
-
-## 📜 Certifications & Professional Learning
-
-- IBM Certified Professional Business Analyst
-- Deloitte Australia Data Analytics Job Simulation
-- McKinsey Forward Program
-- Business Analysis & Process Management
-- Data Modelling with Power BI – Advanced DAX
-- Career Essentials in Data Analysis
-- Career Essentials in Generative AI
-
----
-
-## 🌐 Connect With Me
-
-- 💼 LinkedIn: https://www.linkedin.com/in/kiran-mamadapur/
-- 🌐 Portfolio: https://kiraninbusiness.github.io/portfolio/
-- 📧 Email: kiranmamadapur4669@gmail.com
-
----
-
-> Exploring business problems, analysing data and building better digital experiences.
+`README.md` overview, personas and journey · `docs/` BRD summary, FRD, user stories with acceptance criteria, process flow, Jira-style backlog, RTM, UAT scenarios, KPIs · `assets/` cover, BPMN-style diagram, sitemap, wireframes and high-fidelity screens.

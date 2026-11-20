@@ -1,0 +1,24 @@
+<!DOCTYPE html><html lang="en"><head><meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1"><title>UrbanThread prototype</title><link rel="stylesheet" href="../../shared/style.css"></head><body><header><h1>UrbanThread</h1><small>Concept prototype · fictional data · runs in your browser</small></header><main id="m" aria-live="polite"></main><script src="../../shared/app.js"></script><script>
+const P=[["Oversized tee",899,"S,M,L,XL"],["Cargo pants",1799,"M,L,XL"],["Denim jacket",2999,"S,M,L"],["Hoodie",1599,"S,M,L,XL"],["Bomber jacket",3499,"M,L"],["Slim jeans",1999,"S,M,L,XL"],["Graphic tee",799,"S,M,L"],["Track pants",1299,"M,L,XL"]].map((p,i)=>({id:i,n:p[0],p:p[1],s:p[2].split(",")}));
+let f={sz:[],mx:99999},d={sz:[],mx:99999},sheet=0,v="shop",wl=S("ut-wl",[]),bag=[],step=1,ord=S("ut-ord",null),ad=S("ut-ad",{em:"",ad:""}),err="";
+const list=q=>P.filter(p=>(!q.sz.length||p.s.some(s=>q.sz.includes(s)))&&p.p<=q.mx);
+const A={sheet:()=>{sheet=!sheet;d={sz:[...f.sz],mx:f.mx};R()},sz:s=>{d.sz=d.sz.includes(s)?d.sz.filter(x=>x!=s):[...d.sz,s];R()},mx:x=>{d.mx=+x;R()},
+apply:()=>{f={sz:[...d.sz],mx:d.mx};sheet=0;R()},clear:()=>{f={sz:[],mx:99999};d={sz:[],mx:99999};R()},
+heart:i=>{i=+i;wl=wl.includes(i)?wl.filter(x=>x!=i):[...wl,i];V("ut-wl",wl);R()},add:i=>{bag.push({id:+i,sz:$("#s"+i).value});R()},
+v:x=>{v=x;step=1;err="";R()},
+next:()=>{if(step==2){const em=$("#em").value.trim(),a=$("#ad").value.trim();ad={em,ad:a};if(!/\S+@\S+\.\S+/.test(em)||a.length<8){err="Enter a valid email and a full address.";R();return}V("ut-ad",ad);err=""}step++;R()},
+pay:()=>{ord={id:"UT-"+Math.floor(1000+Math.random()*9000),n:bag.length,d:new Date().toDateString()};V("ut-ord",ord);bag=[];v="track";step=1;R()}};
+const chip=(l,a,val,on)=>`<button class="${on?"on":""}" data-a="${a}" data-v="${val}" aria-pressed="${!!on}">${l}</button>`;
+function R(){let h=`<div class="tabs">${chip("Shop","v","shop",v=="shop")}${chip("Wishlist ("+wl.length+")","v","wish",v=="wish")}${chip("Bag ("+bag.length+")","v","bag",v=="bag")}${chip("Track order","v","track",v=="track")}</div>`;
+if(v=="shop"||v=="wish"){const L=v=="wish"?P.filter(p=>wl.includes(p.id)):list(f);
+if(v=="shop"){h+=`<div class="row"><button data-a="sheet">Filters${f.sz.length||f.mx<99999?" (on)":""}</button><span class="m">${L.length} items</span></div>`;
+if(sheet)h+=`<div class="c" role="dialog" aria-label="Filters"><h3>Size</h3><div class="row">${["S","M","L","XL"].map(s=>chip(s,"sz",s,d.sz.includes(s))).join("")}</div><h3 style="margin-top:12px">Price</h3><div class="row">${[[1000,"Up to ₹1,000"],[2000,"Up to ₹2,000"],[4000,"Up to ₹4,000"],[99999,"Any"]].map(x=>chip(x[1],"mx",x[0],d.mx==x[0])).join("")}</div><p class="m">Show ${list(d).length} items</p><div class="row"><button class="p" data-a="apply">Apply</button><button data-a="clear">Clear all</button></div></div>`}
+h+=`<div class="g" style="margin-top:12px">${L.map(p=>`<div class="c"><div class="img"></div><b>${p.n}</b><div class="m">${inr(p.p)}</div><select id="s${p.id}" aria-label="Size for ${p.n}">${p.s.map(s=>`<option>${s}</option>`).join("")}</select><div class="row"><button class="p" data-a="add" data-v="${p.id}">Add</button><button data-a="heart" data-v="${p.id}" aria-label="Wishlist ${p.n}" aria-pressed="${wl.includes(p.id)}">${wl.includes(p.id)?"♥":"♡"}</button></div></div>`).join("")||"<p>Nothing here yet.</p>"}</div>`}
+if(v=="bag"){if(!bag.length)h+="<p>Your bag is empty.</p>";else{h+=`<div class="c"><h2>Checkout, step ${step} of 3 (guest)</h2>`;
+if(step==1)h+=`<ul>${bag.map(b=>`<li>${P[b.id].n}, size ${b.sz}, ${inr(P[b.id].p)}</li>`).join("")}</ul><b>Total ${inr(bag.reduce((s,b)=>s+P[b.id].p,0))}</b><p><button class="p" data-a="next">Continue as guest</button></p>`;
+if(step==2)h+=`<label>Email<input id="em" type="email" value="${esc(ad.em)}"></label><label>Address<textarea id="ad">${esc(ad.ad)}</textarea></label><p class="m">Your last address is filled in for you.</p><p class="err" role="alert">${err}</p><button class="p" data-a="next">Continue</button>`;
+if(step==3)h+=`<p>Pay on delivery (demo). No payment is taken.</p><button class="p" data-a="pay">Place order</button>`;h+="</div>"}}
+if(v=="track"){if(!ord)h+="<p>No order yet.</p>";else{const st=["Placed","Packed","Shipped","Out for delivery","Delivered"];h+=`<div class="c"><h2>Order ${ord.id}</h2><p class="m">${ord.n} item(s), placed ${ord.d}</p><ol>${st.map((s,i)=>`<li${i<2?' class="ok"':""}>${s}${i<2?" (done)":""}</li>`).join("")}</ol><p class="m">Status steps are simulated.</p></div>`}}
+$("#m").innerHTML=h}
+on(A);R();
+</script></body></html>
