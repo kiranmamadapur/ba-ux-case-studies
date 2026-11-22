@@ -2,5 +2,5 @@
 2. Click "uploading an existing file" and drag in everything from this folder
    (README.md, shared/ and the five project folders). Commit to main.
 3. Settings > Pages > Branch: main, folder: / (root) > Save. Wait a minute.
-4. Open https://kiraninbusiness.github.io/ba-ux-case-studies/urbanthread/prototype/ and try each prototype.
+4. Open https://kiranmamadapur.github.io/ba-ux-case-studies/urbanthread/prototype/ and try each prototype.
 5. Tell Claude the repo is live so the portfolio and resume can link to each folder and prototype.

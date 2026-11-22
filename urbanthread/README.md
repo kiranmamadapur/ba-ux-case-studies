@@ -77,10 +77,10 @@ Schematic screen designs, not final screenshots.
 
 ## Prototype
 
-A working front-end prototype of the four functional requirements: [prototype/index.html](prototype/index.html). It uses HTML, CSS and JavaScript only, with fictional data saved in your browser. There is no backend, and payments, messages and codes are simulated. After enabling GitHub Pages on this repo it runs at https://kiraninbusiness.github.io/ba-ux-case-studies/urbanthread/prototype/
+A working front-end prototype of the four functional requirements: [prototype/index.html](prototype/index.html). It uses HTML, CSS and JavaScript only, with fictional data saved in your browser. There is no backend, and payments, messages and codes are simulated. After enabling GitHub Pages on this repo it runs at https://kiranmamadapur.github.io/ba-ux-case-studies/urbanthread/prototype/
 
 ## Results
 
 **Target outcome (not a measured result):** a shorter checkout and fewer order-status tickets. Targets are assumptions for this simulation.
 
-Portfolio page: https://kiraninbusiness.github.io/portfolio/#case-urbanthread
+Portfolio page: https://kiranmamadapur.github.io/portfolio/#case-urbanthread

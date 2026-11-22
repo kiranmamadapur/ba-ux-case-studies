@@ -2,7 +2,7 @@
 
 Case studies by **Kiran Mamadapur**, Business Analyst and UI/UX Designer. Each folder holds the requirements documents, process flows, wireframes, backlog, traceability matrix and UAT scenarios for one concept project. My real product, THE OFF GRID, has its own repository.
 
-Portfolio: https://kiraninbusiness.github.io/portfolio/
+Portfolio: https://kiranmamadapur.github.io/portfolio/
 
 | Case study | Type | Domain | Tools |
 |---|---|---|---|

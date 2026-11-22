@@ -77,10 +77,10 @@ Schematic screen designs, not final screenshots.
 
 ## Prototype
 
-A working front-end prototype of the four functional requirements: [prototype/index.html](prototype/index.html). It uses HTML, CSS and JavaScript only, with fictional data saved in your browser. There is no backend, and payments, messages and codes are simulated. After enabling GitHub Pages on this repo it runs at https://kiraninbusiness.github.io/ba-ux-case-studies/medicare/prototype/
+A working front-end prototype of the four functional requirements: [prototype/index.html](prototype/index.html). It uses HTML, CSS and JavaScript only, with fictional data saved in your browser. There is no backend, and payments, messages and codes are simulated. After enabling GitHub Pages on this repo it runs at https://kiranmamadapur.github.io/ba-ux-case-studies/medicare/prototype/
 
 ## Results
 
 **Target outcome (not a measured result):** no double bookings and a shorter average wait. Figures are assumed baselines for the simulation.
 
-Portfolio page: https://kiraninbusiness.github.io/portfolio/#case-medicare
+Portfolio page: https://kiranmamadapur.github.io/portfolio/#case-medicare
