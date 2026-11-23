@@ -56,9 +56,9 @@ Patients wait long and double bookings happen because slots live in separate not
 
 | Wireframe | High fidelity |
 |---|---|
-| <img src="assets/wireframe-1.svg" width="160" alt="Wireframe: Book a slot"><br>Book a slot | <img src="assets/hifi-1.svg" width="160" alt="High fidelity: Book a slot"><br>Book a slot |
-| <img src="assets/wireframe-2.svg" width="160" alt="Wireframe: Doctor day view"><br>Doctor day view | <img src="assets/hifi-2.svg" width="160" alt="High fidelity: Doctor day view"><br>Doctor day view |
-| <img src="assets/wireframe-3.svg" width="160" alt="Wireframe: Admin report"><br>Admin report | <img src="assets/hifi-3.svg" width="160" alt="High fidelity: Admin report"><br>Admin report |
+| <img src="assets/wireframe-1.svg" width="200" alt="Wireframe: Book a slot"><br>Book a slot | <img src="assets/hifi-1.svg" width="200" alt="High fidelity: Book a slot"><br>Book a slot |
+| <img src="assets/wireframe-2.svg" width="200" alt="Wireframe: Doctor day view"><br>Doctor day view | <img src="assets/hifi-2.svg" width="200" alt="High fidelity: Doctor day view"><br>Doctor day view |
+| <img src="assets/wireframe-3.svg" width="200" alt="Wireframe: Admin report"><br>Admin report | <img src="assets/hifi-3.svg" width="200" alt="High fidelity: Admin report"><br>Admin report |
 
 Schematic screen designs, not final screenshots.
 

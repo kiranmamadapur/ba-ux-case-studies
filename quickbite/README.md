@@ -56,9 +56,9 @@ Orders arrive late and wrong because the restaurant and the rider are not in syn
 
 | Wireframe | High fidelity |
 |---|---|
-| <img src="assets/wireframe-1.svg" width="160" alt="Wireframe: Order and track"><br>Order and track | <img src="assets/hifi-1.svg" width="160" alt="High fidelity: Order and track"><br>Order and track |
-| <img src="assets/wireframe-2.svg" width="160" alt="Wireframe: Restaurant queue"><br>Restaurant queue | <img src="assets/hifi-2.svg" width="160" alt="High fidelity: Restaurant queue"><br>Restaurant queue |
-| <img src="assets/wireframe-3.svg" width="160" alt="Wireframe: KPI dashboard"><br>KPI dashboard | <img src="assets/hifi-3.svg" width="160" alt="High fidelity: KPI dashboard"><br>KPI dashboard |
+| <img src="assets/wireframe-1.svg" width="200" alt="Wireframe: Order and track"><br>Order and track | <img src="assets/hifi-1.svg" width="200" alt="High fidelity: Order and track"><br>Order and track |
+| <img src="assets/wireframe-2.svg" width="200" alt="Wireframe: Restaurant queue"><br>Restaurant queue | <img src="assets/hifi-2.svg" width="200" alt="High fidelity: Restaurant queue"><br>Restaurant queue |
+| <img src="assets/wireframe-3.svg" width="200" alt="Wireframe: KPI dashboard"><br>KPI dashboard | <img src="assets/hifi-3.svg" width="200" alt="High fidelity: KPI dashboard"><br>KPI dashboard |
 
 Schematic screen designs, not final screenshots.
 

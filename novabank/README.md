@@ -56,9 +56,9 @@ Customers drop transfers when adding a beneficiary is slow and security prompts 
 
 | Wireframe | High fidelity |
 |---|---|
-| <img src="assets/wireframe-1.svg" width="160" alt="Wireframe: Transfer"><br>Transfer | <img src="assets/hifi-1.svg" width="160" alt="High fidelity: Transfer"><br>Transfer |
-| <img src="assets/wireframe-2.svg" width="160" alt="Wireframe: Beneficiaries"><br>Beneficiaries | <img src="assets/hifi-2.svg" width="160" alt="High fidelity: Beneficiaries"><br>Beneficiaries |
-| <img src="assets/wireframe-3.svg" width="160" alt="Wireframe: Transaction search"><br>Transaction search | <img src="assets/hifi-3.svg" width="160" alt="High fidelity: Transaction search"><br>Transaction search |
+| <img src="assets/wireframe-1.svg" width="200" alt="Wireframe: Transfer"><br>Transfer | <img src="assets/hifi-1.svg" width="200" alt="High fidelity: Transfer"><br>Transfer |
+| <img src="assets/wireframe-2.svg" width="200" alt="Wireframe: Beneficiaries"><br>Beneficiaries | <img src="assets/hifi-2.svg" width="200" alt="High fidelity: Beneficiaries"><br>Beneficiaries |
+| <img src="assets/wireframe-3.svg" width="200" alt="Wireframe: Transaction search"><br>Transaction search | <img src="assets/hifi-3.svg" width="200" alt="High fidelity: Transaction search"><br>Transaction search |
 
 Schematic screen designs, not final screenshots.
 

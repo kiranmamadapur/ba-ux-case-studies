@@ -56,9 +56,9 @@ Candidates get lost between recruiters, and nobody sees the true status of a rol
 
 | Wireframe | High fidelity |
 |---|---|
-| <img src="assets/wireframe-1.svg" width="160" alt="Wireframe: Pipeline board"><br>Pipeline board | <img src="assets/hifi-1.svg" width="160" alt="High fidelity: Pipeline board"><br>Pipeline board |
-| <img src="assets/wireframe-2.svg" width="160" alt="Wireframe: Candidate profile"><br>Candidate profile | <img src="assets/hifi-2.svg" width="160" alt="High fidelity: Candidate profile"><br>Candidate profile |
-| <img src="assets/wireframe-3.svg" width="160" alt="Wireframe: Weekly report"><br>Weekly report | <img src="assets/hifi-3.svg" width="160" alt="High fidelity: Weekly report"><br>Weekly report |
+| <img src="assets/wireframe-1.svg" width="200" alt="Wireframe: Pipeline board"><br>Pipeline board | <img src="assets/hifi-1.svg" width="200" alt="High fidelity: Pipeline board"><br>Pipeline board |
+| <img src="assets/wireframe-2.svg" width="200" alt="Wireframe: Candidate profile"><br>Candidate profile | <img src="assets/hifi-2.svg" width="200" alt="High fidelity: Candidate profile"><br>Candidate profile |
+| <img src="assets/wireframe-3.svg" width="200" alt="Wireframe: Weekly report"><br>Weekly report | <img src="assets/hifi-3.svg" width="200" alt="High fidelity: Weekly report"><br>Weekly report |
 
 Schematic screen designs, not final screenshots.
 

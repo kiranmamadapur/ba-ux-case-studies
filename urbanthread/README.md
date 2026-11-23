@@ -56,9 +56,9 @@ Shoppers abandon carts when filters are slow and checkout asks for too much.
 
 | Wireframe | High fidelity |
 |---|---|
-| <img src="assets/wireframe-1.svg" width="160" alt="Wireframe: Filter sheet"><br>Filter sheet | <img src="assets/hifi-1.svg" width="160" alt="High fidelity: Filter sheet"><br>Filter sheet |
-| <img src="assets/wireframe-2.svg" width="160" alt="Wireframe: Wishlist"><br>Wishlist | <img src="assets/hifi-2.svg" width="160" alt="High fidelity: Wishlist"><br>Wishlist |
-| <img src="assets/wireframe-3.svg" width="160" alt="Wireframe: Checkout"><br>Checkout | <img src="assets/hifi-3.svg" width="160" alt="High fidelity: Checkout"><br>Checkout |
+| <img src="assets/wireframe-1.svg" width="200" alt="Wireframe: Filter sheet"><br>Filter sheet | <img src="assets/hifi-1.svg" width="200" alt="High fidelity: Filter sheet"><br>Filter sheet |
+| <img src="assets/wireframe-2.svg" width="200" alt="Wireframe: Wishlist"><br>Wishlist | <img src="assets/hifi-2.svg" width="200" alt="High fidelity: Wishlist"><br>Wishlist |
+| <img src="assets/wireframe-3.svg" width="200" alt="Wireframe: Checkout"><br>Checkout | <img src="assets/hifi-3.svg" width="200" alt="High fidelity: Checkout"><br>Checkout |
 
 Schematic screen designs, not final screenshots.
 
